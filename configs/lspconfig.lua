@@ -19,7 +19,7 @@ require("mason").setup {
   ensure_installed = { "prettierd" }
 }
 require("mason-lspconfig").setup {
-  ensure_installed = { "tsserver", "lua_ls", "clangd", "marksman" },
+  ensure_installed = { "tsserver", "lua_ls", "clangd", "marksman", "jedi_language_server" },
   handlers = {
     lsp_zero.default_setup,
     arduino_language_server = function()
@@ -53,10 +53,10 @@ require("flutter-tools").setup {
       -- set to true to be able use the 'flutter_tools_decorations.device' in your statusline
       -- this will show the currently running device if an application was started with a specific
       -- device
-      device = false,
+      device = true,
       -- set to true to be able use the 'flutter_tools_decorations.project_config' in your statusline
       -- this will show the currently selected project configuration
-      project_config = false,
+      project_config = true,
     },
   },
   debugger = {          -- integrate with nvim dap + install dart code debugger
@@ -72,7 +72,7 @@ require("flutter-tools").setup {
   },
   root_patterns = { ".git", "pubspec.yaml" }, -- patterns to find the root of your flutter project
   widget_guides = {
-    enabled = false,
+    enabled = true,
   },
   closing_tags = {
     highlight = "ErrorMsg", -- highlight for the closing tag
@@ -80,7 +80,7 @@ require("flutter-tools").setup {
     enabled = false,        -- set to false to disable
   },
   dev_log = {
-    enabled = true,
+    enabled = false,
     notify_errors = false, -- if there is an error whilst running then notify the user
     open_cmd = "tabedit",  -- command to use to open the log buffer
   },
