@@ -259,6 +259,13 @@ local plugins = {
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+    'fei6409/log-highlight.nvim',
+    ft = "log",
+    config = function()
+      require('log-highlight').setup {}
+    end,
   }
 }
 
