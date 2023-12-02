@@ -24,6 +24,25 @@ require("mason-lspconfig").setup {
     lsp_zero.default_setup,
     arduino_language_server = function()
       require("lspconfig").clangd.setup({})
+    end,
+    clangd = function()
+      require("lspconfig").clangd.setup {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders"
+        },
+        init_options = {
+          usePlaceholders = true,
+          completeUnimported = true,
+          clangdFileStatus = true,
+          semanticHighlighting = true
+        },
+        flags = { debounce_text_changes = 150 }
+      }
     end
   },
 }
