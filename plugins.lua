@@ -59,7 +59,8 @@ local plugins = {
     end,
   },
   {
-    "akinsho/flutter-tools.nvim",
+    --"akinsho/flutter-tools.nvim",
+    dir = "/home/kevin/nvim-projects/flutter-tools.nvim",
     lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -266,6 +267,13 @@ local plugins = {
     config = function()
       require('log-highlight').setup {}
     end,
+  },
+  {
+    "Civitasv/cmake-tools.nvim",
+    opts = {
+      cmake_build_directory = "build",
+      cmake_generate_options = { "-D", "CMAKE_EXPORT_COMPILE_COMMANDS=1" },
+    }
   }
 }
 
