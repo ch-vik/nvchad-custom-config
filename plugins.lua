@@ -60,7 +60,7 @@ local plugins = {
   },
   {
     --"akinsho/flutter-tools.nvim",
-    dir = "/home/kevin/nvim-projects/flutter-tools.nvim",
+    dir = "/home/kevin/nvim-plugins-git/flutter-tools.nvim",
     lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -269,11 +269,12 @@ local plugins = {
     end,
   },
   {
-    "Civitasv/cmake-tools.nvim",
-    opts = {
-      cmake_build_directory = "build",
-      cmake_generate_options = { "-D", "CMAKE_EXPORT_COMPILE_COMMANDS=1" },
-    }
+    'lervag/vimtex',
+    lazy = false,
+  },
+  {
+    'sindrets/diffview.nvim',
+    lazy = false,
   }
 }
 
